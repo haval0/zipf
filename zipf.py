@@ -33,7 +33,7 @@ if not os.path.exists(dataset_filename):
 
 # Create an array called data that is basically a simple list
 # (e.g. data[4] is how many times the 5th most popular word appears)
-data = np.loadtxt(dataset_filename, dtype = int, comments = None, usecols = 1, max_rows = 100000)
+data = np.loadtxt(dataset_filename, dtype = int, comments = None, usecols = 1, encoding = "utf-8", max_rows = 100000)
 
 # We want to scale the data logarithmically so that we can get Cn^-a (Zipf's law) => -a*n + C for the linear regression
 data_log10 = np.log10(data)
